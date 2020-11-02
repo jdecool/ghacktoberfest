@@ -19,6 +19,7 @@ const (
 	TAG         = "hacktoberfest"
 	USER        = "jdecool"
 
+	STATUT_NOTHING_TO_DO           = 0
 	STATUT_TOPIC_SHOULD_BE_ADDED   = 1
 	STATUT_TOPIC_SHOULD_BE_REMOVED = 2
 	STATUT_UNKNOW_REPOSITORY       = 3
@@ -46,7 +47,7 @@ func (c Configuration) getRepositoryStatus(r string, topics []string) int {
 		return STATUT_TOPIC_SHOULD_BE_REMOVED
 	}
 
-	return 0
+	return STATUT_NOTHING_TO_DO
 }
 
 var rootCmd = &cobra.Command{
